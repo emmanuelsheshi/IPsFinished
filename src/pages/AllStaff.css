@@ -1,0 +1,19 @@
+.content_page {
+  margin-top: 10vh;
+  height: 90vh;
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns: 15% 15% 15% 15%;
+
+  justify-content: space-evenly;
+  min-width: 80%;
+
+  font-family: 'Fondamento', cursive;
+  font-family: 'Poppins', sans-serif;
+
+  animation: fadeInAnimation ease 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: both;
+}

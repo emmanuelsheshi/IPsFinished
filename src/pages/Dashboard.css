@@ -1,0 +1,149 @@
+.dash_page {
+  margin-top: 10vh;
+  height: 90vh;
+  width: 100%;
+
+  padding: 0;
+  background-color: #fbfbfb;
+
+  animation: fadeInAnimation ease 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+.departments {
+  margin-top: 3vh;
+  width: 100%;
+  height: 22vh;
+
+  display: flex;
+  justify-content: space-evenly;
+
+  flex-wrap: nowrap;
+}
+
+.departments_pay_chart {
+  width: 100%;
+  height: 45vh;
+  /* background-color: #f8f7ec89; */
+  display: flex;
+  flex-direction: column;
+  position: 'relative';
+
+  font-family: 'Fondamento', cursive;
+  font-family: 'Poppins', sans-serif;
+  font-family: 'Roboto Mono', monospace;
+
+  /* flex-wrap: wrap; */
+}
+
+.graph {
+  width: 100%;
+  /* background: rgba(255, 0, 0, 0.092); */
+  flex-wrap: nowrap;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 5px;
+  position: relative;
+}
+.section_title {
+  width: 100%;
+
+  /* background: green; */
+
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.content_footer {
+  width: 100%;
+  height: 20vh;
+  /* background-color: #098ea6bc; */
+
+  display: flex;
+
+  background-image: url('../../public/images/bbb.jpg');
+
+  background-size: cover;
+  background-position: 20%;
+  background-repeat: no-repeat;
+}
+
+.footer_footer {
+  width: 100%;
+  height: 100%;
+  background: #01374155;
+
+  font-size: smaller;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  line-height: 1px;
+}
+
+.foot {
+  color: white;
+  width: 100%;
+  height: 10%;
+  display: flex;
+  /* background: rgba(32, 32, 32, 0.531); */
+  align-items: flex-end;
+  justify-content: flex-end;
+  margin-right: 1%;
+  font-size: 10px;
+}
+
+.hoverBox {
+  /* background: #055765; */
+  /* color: rgb(0, 0, 0); */
+  line-height: 0px;
+  font-size: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-style: inset;
+  border-width: 1px;
+
+  height: 60px;
+
+  border-radius: 10px;
+  /* margin-top: 10px; */
+
+  /* background-color: #3b03033c; */
+  padding: 0.5%;
+
+  cursor: pointer;
+  z-index: 9999;
+  width: fit-content;
+}
+
+.glance_stats {
+  line-height: 0px;
+  font-size: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 180px;
+  height: 520%;
+
+  justify-content: flex-start;
+  align-items: flex-start;
+  border-radius: 10px;
+
+  position: absolute;
+  background-color: #3b03032f;
+  padding: 1%;
+  top: 10%;
+
+  right: 5px;
+  display: none;
+
+  cursor: pointer;
+}
