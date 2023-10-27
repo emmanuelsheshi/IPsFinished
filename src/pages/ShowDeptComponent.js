@@ -136,7 +136,8 @@ const ShowDepartmentComponent = () => {
       <table className="table">
         <tr>
           <th>s/n</th>
-          <th>department</th>
+          <th>Section</th>
+          <th>Department</th>
           <th>First Name</th>
           <th>Last Name</th>
           <th>Bank code</th>
@@ -155,6 +156,7 @@ const ShowDepartmentComponent = () => {
               <tr key={key}>
                 <td>{key + 1}</td>
                 <td>{result.department}</td>
+                <td>{result.section}</td>
                 <td>{result.surname} </td>
                 <td>{result.first_name} </td>
                 <td>{result.bank_code} </td>

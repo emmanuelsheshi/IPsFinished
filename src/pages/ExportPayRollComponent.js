@@ -226,7 +226,8 @@ const ExportPayRollComponent = () => {
       <table className="table">
         <tr>
           <th>s/n</th>
-          <th>Section</th>
+
+          <th>Department</th>
 
           <th>First Name</th>
           <th>Last Name</th>
@@ -234,6 +235,7 @@ const ExportPayRollComponent = () => {
           <th>Account number</th>
           <th>Amount</th>
           <th>Remark</th>
+          <th>Section</th>
         </tr>
 
         {typeof results === 'undefined' ? (
@@ -245,6 +247,7 @@ const ExportPayRollComponent = () => {
             return (
               <tr key={key}>
                 <td>{key + 1}</td>
+
                 <td>{result.section}</td>
                 <td>{result.surname} </td>
                 <td>{result.first_name} </td>
@@ -252,6 +255,7 @@ const ExportPayRollComponent = () => {
                 <td>{result.account_number} </td>
                 <td>{result.gross_pay} </td>
                 <td>{result.remark}</td>
+                <td>{result.department}</td>
               </tr>
             )
           })

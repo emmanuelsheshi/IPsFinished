@@ -40,6 +40,8 @@ const DashBoardPage = ({ props }) => {
     ...data.production_staff,
   ]
 
+  const deploymentSection = data.sectionByLocation
+
   //hover created here
 
   const getBox = (whichBox, info) => {
@@ -87,6 +89,7 @@ const DashBoardPage = ({ props }) => {
       .get(url)
       .then((response) => {
         const data = response.data.searchResults
+
         setResults(data)
       })
       .catch((err) => {
@@ -112,11 +115,15 @@ const DashBoardPage = ({ props }) => {
     <div className="dash_page">
       <ErrorComponent props={{ state: error.state, message: error.message }} />
       <div className="departments">
-        {data.departments.map((department, key) => {
+        {deploymentSection.map((department, key) => {
           return (
             <Department
               key={key}
-              props={{ department: department, image: key, data: results }}
+              props={{
+                department: department.label,
+                image: key,
+                data: results,
+              }}
             />
           )
         })}
@@ -137,10 +144,7 @@ const DashBoardPage = ({ props }) => {
           {' '}
         </div>
         <div className="section_title">
-          <div className="glance_stats"></div>
-          {/* <img src="../images/stats.svg" alt="" /> */}
-
-          <p>Section Statistics at a glance</p>
+          <p>Department Statistics at a glance</p>
         </div>
         <div
           className="total_salary"

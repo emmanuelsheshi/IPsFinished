@@ -59,6 +59,7 @@
   display: flex;
   justify-content: center;
   position: relative;
+  margin-top: 1%;
 }
 
 .content_footer {
@@ -123,27 +124,4 @@
   cursor: pointer;
   z-index: 9999;
   width: fit-content;
-}
-
-.glance_stats {
-  line-height: 0px;
-  font-size: 10px;
-  display: flex;
-  flex-direction: column;
-  width: 180px;
-  height: 520%;
-
-  justify-content: flex-start;
-  align-items: flex-start;
-  border-radius: 10px;
-
-  position: absolute;
-  background-color: #3b03032f;
-  padding: 1%;
-  top: 10%;
-
-  right: 5px;
-  display: none;
-
-  cursor: pointer;
 }

@@ -17,11 +17,12 @@ import { useNavigate } from 'react-router-dom'
 
 const Department = ({ props }) => {
   const navigate = useNavigate()
-  const department = props.department.label
+  const department = props.department
   let image = ''
   let data = props.data
   let sum = 0
 
+  console.log(department.toString(), department.length)
   const departmentFilter = data.filter((result) => {
     return result.department === department
   })

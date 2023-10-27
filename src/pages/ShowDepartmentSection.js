@@ -129,7 +129,7 @@ const ShowSectionComponent = () => {
 
       <table className="table" ref={componentPDF}>
         <tr>
-          <th>section</th>
+          <th>Department</th>
           <th>First Name</th>
           <th>Last Name</th>
           <th>Bank code</th>

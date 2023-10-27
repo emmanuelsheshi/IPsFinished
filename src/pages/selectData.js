@@ -1,30 +1,18 @@
 export const employment_status_options = [
-  { label: 'permanent', value: 'Permanent' },
-  { label: 'temporary', value: 'Temporary' },
+  { label: 'PERMANENT', value: 'PERMANENT' },
+  { label: 'ESSENTIAL', value: 'ESSENTIAL' },
+  { label: 'CONTRACT', value: 'CONTRACT' },
 ]
 
 export const departments = [
   { label: 'ESSENTIAL', value: 'ESSENTIAL' },
   { label: 'POLICE', value: 'POLICE' },
-
   { label: 'SECURITY', value: 'SECURITY' },
-
   { label: 'SPECIAL EQUIPMENT', value: 'SPECIAL EQUIPMENT' },
-
   { label: 'PRODUCTION', value: 'PRODUCTION' },
-
   { label: 'CONSTRUCTION', value: 'CONSTRUCTION' },
-
   { label: 'MANAGEMENT', value: 'MANAGEMENT' },
 ]
-
-// export const departments = [
-//   { label: 'ESSENTIAL', value: 'ESSENTIAL' },
-//   { label: 'CONTRACT', value: 'CONTRACT' },
-
-//   { label: 'PERMANENT', value: 'PERMANENT' },
-
-// ]
 
 export const police = [{ label: 'POLICE', value: 'POLICE' }]
 export const security = [{ label: 'SECURITY', value: 'SECURITY' }]
@@ -50,7 +38,7 @@ export const special_equipment_production = [
   { label: 'QUALITY CONTROL/CUTTING', value: 'QUALITY CONTROL/CUTTING' },
   { label: 'MAINTENANCE', value: 'MAINTENANCE' },
   { label: 'STRIKE FACE PRODUCTION', value: 'STRIKE FACE PRODUCTION' },
-  { label: 'HELMET PRODUCTION ', value: 'HELMET PRODUCTION ' }, // this space was a mistake
+  { label: 'HELMET PRODUCTION', value: 'HELMET PRODUCTION' }, // this space was a mistake
   { label: 'IMPERIUM SPECIAL EQUIPMENT', value: 'IMPERIUM SPECIAL EQUIPMENT' },
   { label: 'DICON SPECIAL EQUIPMENT', value: 'DICON SPECIAL EQUIPMENT' },
   { label: 'SPECIAL EQUIPMENT ADMIN', value: 'SPECIAL EQUIPMENT ADMIN' },
@@ -62,7 +50,6 @@ export const production_staff = [
   { label: 'MECHANICS', value: 'MECHANICS' },
 
   { label: 'AUTO ELECTRICIAN', value: 'AUTO ELECTRICIAN' },
-
   {
     label: 'INTERIOR / BULLETPROOF GLASS',
     value: 'INTERIOR / BULLETPROOF GLASS',
@@ -73,6 +60,8 @@ export const production_staff = [
   { label: 'RESEARCH AND DEVELOPMENT', value: 'RESEARCH AND DEVELOPMENT' },
 
   { label: 'ELECTRICAL', value: 'ELECTRICAL' },
+
+  { label: 'TURNERS', value: 'TURNERS' },
 ]
 
 export const construction_site_staff = [
@@ -320,4 +309,33 @@ export const bankNames = [
     name: 'Access Bank',
     code: '044',
   },
+]
+
+export const hqSection = [
+  ...production_staff,
+  { label: 'OFFICE CLEANERS', value: 'OFFICE CLEANERS' },
+  { label: 'COOKS', value: 'COOKS' },
+  { label: 'SECRETARIES', value: 'SECRETARIES' },
+]
+
+export const siteSection = [
+  ...construction_site_staff,
+  { label: 'ELECTRICAL', value: 'ELECTRICAL' },
+  { label: 'SECURITY', value: 'SECURITY' },
+  { label: 'POLICE', value: 'POLICE' },
+]
+export const specialEquipmentSection = [
+  ...special_equipment_production,
+  { label: 'ELECTRICAL', value: 'ELECTRICAL' },
+  { label: 'WELDERS', value: 'WELDERS' },
+  { label: 'SECURITY', value: 'SECURITY' },
+  { label: 'SPECIAL EQUIPMENT CLEANERS', value: 'SPECIAL EQUIPMENT CLEANERS' },
+  { label: 'SPECIAL EQUIPMENT DRIVERS', value: 'SPECIAL EQUIPMENT DRIVERS' },
+  { label: 'NURSES', value: 'NURSES' },
+]
+
+export const sectionByLocation = [
+  { label: 'HQ', value: 'HQ' },
+  { label: 'SITE', value: 'SITE' },
+  { label: 'SPECIAL EQUIPMENT', value: 'SPECIAL EQUIPMENT' },
 ]

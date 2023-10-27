@@ -20,15 +20,24 @@ import {
   production_staff,
   empty,
   bankNames,
+  sectionByLocation,
+  hqSection,
+  specialEquipmentSection,
+  siteSection,
 } from './selectData'
 
 // console.log({ sections })
 
 const AddEmployeeComponent = () => {
-  const [dept, setDept] = useState('ESSENTIAL')
+  const [dept, setDept] = useState('HQ')
   const [data, setData] = useState(essentialDepartments)
   const [image, setImage] = useState('')
-  const [bank, setBank] = useState([{}])
+  const [bank, setBank] = useState([
+    {
+      name: 'Parallex MFB',
+      code: '015',
+    },
+  ])
   const [ballPosition, setBallPosition] = useState('0')
 
   const { setActive } = useActive()
@@ -40,23 +49,13 @@ const AddEmployeeComponent = () => {
 
   useEffect(() => {
     setActive('Create Employee')
-    console.log('a change has occured')
-    if (dept === 'ESSENTIAL') {
-      console.log('essential selected')
-      setData(essentialDepartments)
+
+    if (dept === 'HQ') {
+      setData(hqSection)
+    } else if (dept === 'SITE') {
+      setData(siteSection)
     } else if (dept === 'SPECIAL EQUIPMENT') {
-      console.log('special equimpment selected')
-      setData(special_equipment_production)
-    } else if (dept === 'PRODUCTION') {
-      setData(production_staff)
-    } else if (dept === 'CONSTRUCTION') {
-      setData(construction_site_staff)
-    } else if (dept === 'POLICE') {
-      setData(police)
-    } else if (dept === 'MANAGEMENT') {
-      setData(management)
-    } else if (dept === 'SECURITY') {
-      setData(security)
+      setData(specialEquipmentSection)
     } else {
       setData(empty)
     }
@@ -198,7 +197,7 @@ const AddEmployeeComponent = () => {
               ))}
             </select>
 
-            <p>Department</p>
+            <p>Deployment Section</p>
             <select
               className="custom-select sources"
               name="department"
@@ -207,13 +206,13 @@ const AddEmployeeComponent = () => {
                 setBallPosition('35')
               }}
             >
-              {departments.map((department, key) => (
+              {sectionByLocation.map((department, key) => (
                 <option key={key} value={department.value}>
                   {department.label}
                 </option>
               ))}
             </select>
-            <p>Section</p>
+            <p>Department</p>
             <select
               id="sources"
               className="custom-select sources"

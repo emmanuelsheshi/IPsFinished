@@ -20,6 +20,10 @@ import {
   production_staff,
   empty,
   bankNames,
+  sectionByLocation,
+  hqSection,
+  specialEquipmentSection,
+  siteSection,
 } from './selectData'
 
 const UpdateEmployeeComponent = () => {
@@ -29,7 +33,7 @@ const UpdateEmployeeComponent = () => {
   // console.log(location.state)
 
   const [dept, setDept] = useState(location.state.department)
-  const [data, setData] = useState(essentialDepartments)
+  const [data, setData] = useState([])
   const [image, setImage] = useState('')
   const [bank, setBank] = useState([{}])
 
@@ -39,23 +43,12 @@ const UpdateEmployeeComponent = () => {
   }
 
   useEffect(() => {
-    console.log('a change has occured')
-    if (dept === 'ESSENTIAL') {
-      console.log('essential selected')
-      setData(essentialDepartments)
+    if (dept === 'HQ') {
+      setData(hqSection)
+    } else if (dept === 'SITE') {
+      setData(siteSection)
     } else if (dept === 'SPECIAL EQUIPMENT') {
-      console.log('special equimpment selected')
-      setData(special_equipment_production)
-    } else if (dept === 'PRODUCTION') {
-      setData(production_staff)
-    } else if (dept === 'CONSTRUCTION') {
-      setData(construction_site_staff)
-    } else if (dept === 'POLICE') {
-      setData(police)
-    } else if (dept === 'MANAGEMENT') {
-      setData(management)
-    } else if (dept === 'SECURITY') {
-      setData(security)
+      setData(specialEquipmentSection)
     } else {
       setData(empty)
     }
@@ -89,6 +82,10 @@ const UpdateEmployeeComponent = () => {
     document.querySelector('.gross_pay').value = location.state.gross_pay
     // document.querySelector('.upload').value = location.state.imageUrl
   }, FormData)
+
+  useEffect(() => {
+    document.querySelector('.section').value = location.state.section
+  })
 
   const promiseHandler = async (url, payload) => {
     try {
@@ -224,20 +221,20 @@ const UpdateEmployeeComponent = () => {
               ))}
             </select>
 
-            <p>Department</p>
+            <p>Deployment Section</p>
             <select
               required={true}
               className="department"
               name="department"
               onChange={(e) => setDept(e.target.value)}
             >
-              {departments.map((department, key) => (
+              {sectionByLocation.map((department, key) => (
                 <option key={key} value={department.value}>
                   {department.label}
                 </option>
               ))}
             </select>
-            <p>Section</p>
+            <p>Department</p>
             <select
               id="sources"
               className="section"
